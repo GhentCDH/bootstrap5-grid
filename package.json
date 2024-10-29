@@ -18,11 +18,11 @@
   "scripts": {
     "prepare": "husky install",
     "lint": "stylelint \"**/*.scss\"",
-    "release": "yarn publish --access=public",
+    "release": "pnpm publish --access=public",
     "build": "run-p -l build:css build:minify",
     "build:css": "sass ./scss/index.scss ./css/bootstrap-grid.css --load-path=./node_modules",
     "build:minify": "sass ./scss/index.scss ./css/bootstrap-grid.min.css --load-path=./node_modules --style compressed",
-    "prepublishOnly": "yarn build"
+    "prepublishOnly": "pnpm build"
   },
   "files": [
     "scss/**/*",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@commitlint/cli": "^17.4.0",
     "@commitlint/config-conventional": "^17.4.0",
-    "bootstrap": "~5.2.3",
+    "bootstrap": "^5.3.3",
     "husky": "^8.0.3",
     "stylelint": "^14.16.1",
     "stylelint-scss": "^4.3.0",
